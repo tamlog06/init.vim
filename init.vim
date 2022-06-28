@@ -110,8 +110,8 @@ endfunction
 
 augroup MyColors
     autocmd!
-    autocmd ColorScheme dracula call DraculaTweaks()
-    "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
+    " autocmd ColorScheme dracula call DraculaTweaks()
+    autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
 color dracula
@@ -218,3 +218,11 @@ nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 " delete highlight 
 nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" increase indent
+nnoremap <Tab> >>
+inoremap <Tab> <C-t>
+
+" decrease indent
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>         " doesn't work
