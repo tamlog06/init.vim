@@ -57,20 +57,27 @@ Plug 'junegunn/vim-journal'
 call plug#end()
 
 """ Main Configurations
-filetype plugin indent on
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
-set incsearch ignorecase smartcase hlsearch
-set wildmode=longest,list,full wildmenu
-set ruler laststatus=2 showcmd showmode
-set list listchars=trail:»,tab:»-
-set fillchars+=vert:\ 
-set wrap breakindent
-set encoding=utf-8
-set textwidth=0
-set hidden
-set number
-set title
+filetype plugin indent on                "detect filetype and set different settings for each filetype
+set tabstop=4 softtabstop=4 shiftwidth=4 "tab setting
+set expandtab smarttab autoindent        "tab setting
+set incsearch                            "n/N to jump next/before candidate
+set ignorecase                           "don't destinguish large and small character
+set smartcase                            "if large character is included in search character, ignore ignorecase
+set wrapscan                             "go back to top if go to the bottom
+set hlsearch                             "hilight words
+set wildmode=longest,list,full wildmenu  "set tab completion
+set ruler                                "display cursor position
+set laststatus=2                         "always display status line
+set showmode                             "display current mode
+set list                                 "display blank text
+set nowrap                               "don't wrap
+set encoding=utf-8                       "utf-8
+set hidden                               "keep buffer
+set number                               "display line number
+set title                                "display title
+set clipboard=unnamed                    "copy to clipboard
 set confirm
+
 """ Filetype-Specific Configurations
 
 " HTML, XML, Jinja
