@@ -44,6 +44,12 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
 
+" Functionalities - git
+Plug 'tpope/vim-fugitive'
+
+" Functionalities - Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
 " Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
@@ -80,20 +86,15 @@ set confirm
 
 """ Filetype-Specific Configurations
 
-" HTML, XML, Jinja
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
-autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
-autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
-
 " Markdown and Journal
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
-""" Coloring
+" Markdown
+let g:mkdp_auto_start = 1   " automatically open markdown-preview
+
+
+"" Coloring
 
 " Functions and autocmds to run whenever changing colorschemes
 function! TransparentBackground()
@@ -198,7 +199,7 @@ nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
 nmap <leader>h :RainbowParentheses!!<CR>
-nmap <leader>j :set filetype=journal<CR>
+"nmap <leader>j :set filetype=journal<CR>
 nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
@@ -227,9 +228,9 @@ nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <ESC><ESC> :nohlsearch<CR>
 
 " increase indent
-nnoremap <Tab> >>
+"nnoremap <Tab> >
 inoremap <Tab> <C-t>
 
 " decrease indent
-nnoremap <S-Tab> <<
+"nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>         " doesn't work
