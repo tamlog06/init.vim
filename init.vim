@@ -47,10 +47,10 @@ Plug 'heavenshell/vim-pydocstring'
 " Functionalities - git
 Plug 'tpope/vim-fugitive'
 
-" Functionalities - markdown
+" Functionalities - Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
-"Aesthetics - Colorschemes
+" Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
 Plug 'yuttie/hydrangea-vim'
@@ -89,7 +89,10 @@ set confirm
 
 " Markdown and Journal
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+"autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Markdown
+let g:mkdp_auto_start = 1    " automatically open markdown-preview
 
 """ Coloring
 
@@ -115,7 +118,7 @@ endfunction
 
 augroup MyColors
     autocmd!
-    "autocmd ColorScheme dracula call DraculaTweaks()
+    " autocmd ColorScheme dracula call DraculaTweaks()
     autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
@@ -138,10 +141,10 @@ set updatetime=100                      " By default updatetime is 4000ms
 set completeopt=menu,menuone,noselect
 
 " signify
-"let g:signify_sign_add = '│'
-"let g:signify_sign_delete = '│'
-"let g:signify_sign_change = '│'
-"hi DiffDelete guifg=#ff5555 guibg=none
+let g:signify_sign_add = '│'
+let g:signify_sign_delete = '│'
+let g:signify_sign_change = '│'
+hi DiffDelete guifg=#ff5555 guibg=none
 
 " indentLine
 let g:indentLine_char = '▏'
@@ -199,7 +202,7 @@ nmap <leader>t :call TrimWhitespace()<CR>
 xmap <leader>a gaip*
 nmap <leader>a gaip*
 nmap <leader>h :RainbowParentheses!!<CR>
-nmap <leader>j :set filetype=journal<CR>
+"nmap <leader>j :set filetype=journal<CR>
 nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
@@ -212,9 +215,6 @@ nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
 " Python
 autocmd Filetype python nmap <leader>d <Plug>(pydocstring)
 autocmd FileType python nmap <leader>p :Black<CR>
-
-" Markdown
-let g:mkdp_auto_start = 1    " automatically open markdown-preview
 
 
 
