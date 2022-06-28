@@ -1,11 +1,12 @@
-let g:python3_host_prog = '/opt/homebrew/var/pyenv/versions/neovim3/bin/python'
+""" Optixal's Neovim Init.vim
+let g:python3_host_prog = '/home/stamura/.pyenv/versions/neovim3/bin/python'
+
 """ Vim-Plug
 call plug#begin()
 
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
-Plug 'airblade/vim-gitgutter'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -38,19 +39,12 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'easymotion/vim-easymotion'
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
 
-" Functionalities - git
-Plug 'tpope/vim-fugitive'
-
-" Functionalities - markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-
-"Aesthetics - Colorschemes
+" Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
 Plug 'yuttie/hydrangea-vim'
@@ -60,32 +54,33 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
 
-
 call plug#end()
 
 """ Main Configurations
-filetype plugin indent on                "detect filetype and set different settings for each filetype
-set tabstop=4 softtabstop=4 shiftwidth=4 "tab setting
-set expandtab smarttab autoindent        "tab setting
-set incsearch                            "n/N to jump next/before candidate
-set ignorecase                           "don't destinguish large and small character
-set smartcase                            "if large character is included in search character, ignore ignorecase
-set wrapscan                             "go back to top if go to the bottom
-set hlsearch                             "hilight words
-set wildmode=longest,list,full wildmenu  "set tab completion
-set ruler                                "display cursor position
-set laststatus=2                         "always display status line
-set showmode                             "display current mode
-set list                                 "display blank text
-set nowrap                               "don't wrap
-set encoding=utf-8                       "utf-8
-set hidden                               "keep buffer
-set number                               "display line number
-set title                                "display title
-set clipboard=unnamed                    "copy to clipboard
+filetype plugin indent on
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
+set incsearch ignorecase smartcase hlsearch
+set wildmode=longest,list,full wildmenu
+set ruler laststatus=2 showcmd showmode
+set list listchars=trail:»,tab:»-
+set fillchars+=vert:\ 
+set wrap breakindent
+set encoding=utf-8
+set textwidth=0
+set hidden
+set number
+set title
 set confirm
-
 """ Filetype-Specific Configurations
+
+" HTML, XML, Jinja
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType xml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType htmldjango inoremap {{ {{  }}<left><left><left>
+autocmd FileType htmldjango inoremap {% {%  %}<left><left><left>
+autocmd FileType htmldjango inoremap {# {#  #}<left><left><left>
 
 " Markdown and Journal
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -115,11 +110,12 @@ endfunction
 
 augroup MyColors
     autocmd!
-    "autocmd ColorScheme dracula call DraculaTweaks()
-    autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
+    autocmd ColorScheme dracula call DraculaTweaks()
+    "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
 color dracula
+set termguicolors
 
 """ Core plugin configuration (vim)
 
@@ -130,18 +126,14 @@ augroup DraculaTreesitterSourcingFix
     syntax on
 augroup end
 
-" git-gutter
-set signcolumn=yes                      " Always show sign column
-set updatetime=100                      " By default updatetime is 4000ms
-
 " nvim-cmp
 set completeopt=menu,menuone,noselect
 
 " signify
-"let g:signify_sign_add = '│'
-"let g:signify_sign_delete = '│'
-"let g:signify_sign_change = '│'
-"hi DiffDelete guifg=#ff5555 guibg=none
+let g:signify_sign_add = '│'
+let g:signify_sign_delete = '│'
+let g:signify_sign_change = '│'
+hi DiffDelete guifg=#ff5555 guibg=none
 
 " indentLine
 let g:indentLine_char = '▏'
@@ -213,11 +205,6 @@ nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
 autocmd Filetype python nmap <leader>d <Plug>(pydocstring)
 autocmd FileType python nmap <leader>p :Black<CR>
 
-" Markdown
-let g:mkdp_auto_start = 1    " automatically open markdown-preview
-
-
-
 " Solidity (requires: npm install --save-dev prettier prettier-plugin-solidity)
 autocmd Filetype solidity nmap <leader>p :0,$!npx prettier %<CR>
 
@@ -229,24 +216,5 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 
-" Terminal setting
-" resize terminal with T
-command! -nargs=* T split | wincmd j | resize 5 | terminal <args>
-" open terminal with insert mode
-autocmd TermOpen * startinsert
-
-
-" map option+hjkl to Ctrl hjkl
-map ˙ <C-w>h
-map ∆ <C-w>j
-map ˚ <C-w>k
-map ¬ <C-w>l
-
-" map option t d to Ctrl t d 
-" increase indent
-"nnoremap <Tab> >>
-inoremap <Tab> <C-t>
-" decrease indent
-"nnoremap <S-Tab> <<
-inoremap <S-Tab> <C-d>
-
+" delete highlight 
+nnoremap <ESC><ESC> :nohlsearch<CR>
