@@ -156,6 +156,8 @@ let g:cursorhold_updatetime = 100
 " context.vim
 let g:context_nvim_no_redraw = 1
 
+let g:RainbowParentheses = 0
+
 " Neovim :Terminal
 tmap <Esc> <C-\><C-n>
 tmap <C-w> <Esc><C-w>
