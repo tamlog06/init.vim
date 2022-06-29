@@ -23,6 +23,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
 " Functionalities
+function! UpdateRemotePlugins(...)
+  " Needed to refresh runtime files
+  let &rtp=&rtp
+  UpdateRemotePlugins
+endfunction
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -92,9 +98,7 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " Markdown
 let g:mkdp_auto_start = 1   " automatically open markdown-preview
 
-
-"" Coloring
-
+""" Coloring
 " Functions and autocmds to run whenever changing colorschemes
 function! TransparentBackground()
     highlight Normal guibg=NONE ctermbg=NONE
@@ -141,6 +145,9 @@ let g:signify_sign_add = '│'
 let g:signify_sign_delete = '│'
 let g:signify_sign_change = '│'
 hi DiffDelete guifg=#ff5555 guibg=none
+
+" wilder settings
+call wilder#setup({'modes': [':']})
 
 " indentLine
 let g:indentLine_char = '▏'
@@ -218,7 +225,7 @@ autocmd FileType python nmap <leader>p :Black<CR>
 autocmd Filetype solidity nmap <leader>p :0,$!npx prettier %<CR>
 
 " Telescope mappings
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
