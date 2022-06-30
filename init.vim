@@ -60,7 +60,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'
 
-
 call plug#end()
 
 """ Main Configurations
@@ -92,7 +91,7 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 "autocmd FileType journal setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Markdown
-let g:mkdp_auto_start = 1    " automatically open markdown-preview
+let g:mkdp_auto_start = 1   " automatically open markdown-preview
 
 """ Coloring
 
@@ -216,13 +215,11 @@ nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
 autocmd Filetype python nmap <leader>d <Plug>(pydocstring)
 autocmd FileType python nmap <leader>p :Black<CR>
 
-
-
 " Solidity (requires: npm install --save-dev prettier prettier-plugin-solidity)
 autocmd Filetype solidity nmap <leader>p :0,$!npx prettier %<CR>
 
 " Telescope mappings
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true <cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -235,14 +232,13 @@ command! -nargs=* T split | wincmd j | resize 5 | terminal <args>
 " open terminal with insert mode
 autocmd TermOpen * startinsert
 
-
 " map option+hjkl to Ctrl hjkl
 map ˙ <C-w>h
 map ∆ <C-w>j
 map ˚ <C-w>k
 map ¬ <C-w>l
 
-" map option t d to Ctrl t d 
+" map option t d to Ctrl t d
 " increase indent
 "nnoremap <Tab> >>
 inoremap <Tab> <C-t>
