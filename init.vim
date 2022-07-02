@@ -39,6 +39,7 @@ Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'easymotion/vim-easymotion'
+Plug 'github/copilot.vim'
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
@@ -92,6 +93,10 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " Markdown
 let g:mkdp_auto_start = 1   " automatically open markdown-preview
+
+" Copilot
+"let g:copilot_no_tab_map = 1
+"vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 """ Coloring
 
