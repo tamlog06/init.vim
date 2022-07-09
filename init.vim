@@ -84,6 +84,14 @@ set title                                "display title
 set clipboard=unnamed                    "copy to clipboard
 set confirm
 
+""" Mouse settings
+set mouse=a                               "use mouse
+
+nnoremap <C-U> :call SmoothScroll(1)<Enter>
+nnoremap <C-D> :call SmoothScroll(0)<Enter>
+inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
+inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
+
 """ Filetype-Specific Configurations
 
 " Markdown and Journal
@@ -206,7 +214,8 @@ nmap <leader>h :RainbowParentheses!!<CR>
 nmap <leader>k :ColorToggle<CR>
 nmap <leader>l :Limelight!!<CR>
 xmap <leader>l :Limelight!!<CR>
-nmap <silent> <leader><leader> :noh<CR>
+nnoremap <leader><leader> :noh<CR>
+nnoremap <ESC><ESC> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 nmap <leader>$s <C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>
@@ -229,7 +238,7 @@ nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 " copilot
 imap <silent><script><expr> <leader><Tab> copilot#Accept("")
-let g:copilot_no_tab_map = v:true
+"let g:copilot_no_tab_map = v:true
 "nvim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 " Terminal setting
