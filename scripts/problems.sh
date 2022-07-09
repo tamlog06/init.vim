@@ -1,8 +1,6 @@
 # zsh problems.sh ABC 240
 
-CURRENT=$(cd $(dirname $0);pwd)
 dir=problems/$1/$2
-
 if [ $1 = ABC ]; then
     KIND=abc$2
     if [ $2 -le 125 ]; then
@@ -38,5 +36,7 @@ mkdir ${dir}
 
 for i in ${fileary[@]}
 do
-touch ${dir}/${KIND}_$i.py
+mkdir ${dir}/${i}
+touch ${dir}/${i}/${KIND}_$i.py
+cp ~/Documents/Atcoder-Beginner-Contest/tips/sample.py ${dir}/${i}/
 done

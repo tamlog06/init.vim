@@ -66,3 +66,4 @@ alias cptest='~/.scripts/cptest.sh'
 # alias problems
 alias mkproblems='~/.scripts/problems.sh'
 export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'
+

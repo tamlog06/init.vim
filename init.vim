@@ -262,13 +262,14 @@ map ¬ <C-w>l
 inoremap <S-Tab> <C-d>
 
 " atcoder
-function Cptest()
-    let g:problem_name = '%:t:r'
-    let g:full_path = '%:p'
-    :T
-    :!~/.scripts/cptest.sh problem_name full_path
-endfunction
+"function! Cptest()
+    "let g:problem_name = '%:t:r'
+    "let g:full_path = '%:p'
+    ":T
+    "exec ~/.scripts/cptest.sh $g:problem_name $g:full_path
+"endfunction
 
-"nnoremap <C-l> <cmd> call Cptest() <cr>
+"command! Cptest call Cptest()
 
-nnoremap <C-b> :!~/.scripts/cptest.sh '%:t:r' '%:p'
+"nnoremap <C-l> <cmd>call Cptest()<cr>
+"nnoremap <C-b> :!~/.scripts/cptest.sh '%:t:r' '%:p'<Enter>
