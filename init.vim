@@ -86,11 +86,12 @@ set confirm
 
 """ Mouse settings
 set mouse=a                               "use mouse
-
-nnoremap <C-U> :call SmoothScroll(1)<Enter>
-nnoremap <C-D> :call SmoothScroll(0)<Enter>
-inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
-inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+"nnoremap <C-U> :call SmoothScroll(1)<Enter>
+"nnoremap <C-D> :call SmoothScroll(0)<Enter>
+"inoremap <C-U> <Esc>:call SmoothScroll(1)<Enter>i
+"inoremap <C-D> <Esc>:call SmoothScroll(0)<Enter>i
 
 """ Filetype-Specific Configurations
 
