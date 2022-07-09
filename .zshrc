@@ -59,3 +59,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # alias ide 
 alias ide='~/.scripts/ide.sh'
+
+# alias cptest
+alias cptest='~/.scripts/cptest.sh'
+
+# alias problems
+alias mkproblems='~/.scripts/problems.sh'
+export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'

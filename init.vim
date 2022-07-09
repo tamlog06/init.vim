@@ -1,11 +1,10 @@
 let g:python3_host_prog = '/opt/homebrew/var/pyenv/versions/neovim3/bin/python'
 """ Vim-Plug
 call plug#begin()
-
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-Plug 'nvim-treesitter/playground'
-Plug 'airblade/vim-gitgutter'
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " color
+Plug 'nvim-treesitter/playground' " color
+Plug 'airblade/vim-gitgutter'    " git
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -94,9 +93,6 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2
 " Markdown
 let g:mkdp_auto_start = 1   " automatically open markdown-preview
 
-" Copilot
-"let g:copilot_no_tab_map = 1
-"vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 """ Coloring
 
@@ -231,6 +227,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 
+" copilot
+imap <silent><script><expr> <leader><Tab> copilot#Accept("")
+let g:copilot_no_tab_map = v:true
+"nvim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
 " Terminal setting
 " resize terminal with T
 command! -nargs=* T split | wincmd j | resize 5 | terminal <args>
@@ -246,8 +247,19 @@ map ¬ <C-w>l
 " map option t d to Ctrl t d
 " increase indent
 "nnoremap <Tab> >>
-inoremap <Tab> <C-t>
+"inoremap <Tab> <C-t>
 " decrease indent
 "nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
+" atcoder
+function Cptest()
+    let g:problem_name = '%:t:r'
+    let g:full_path = '%:p'
+    :T
+    :!~/.scripts/cptest.sh problem_name full_path
+endfunction
+
+"nnoremap <C-l> <cmd> call Cptest() <cr>
+
+nnoremap <C-b> :!~/.scripts/cptest.sh '%:t:r' '%:p'
