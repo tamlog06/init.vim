@@ -4,7 +4,13 @@ pyenv shell ABC
 count=0
 files='./*.py'
 for f in $files; do
-    file=$f
+    tmp=${f%.*}
+    tmp=${tmp##*/}
+    if [ $tmp == "generate" ]; then
+        continue
+    fi
+    problem_name=$tmp
+    path=$f
     count=$((count + 1))
 done
 
@@ -14,17 +20,16 @@ if [ $count -ne 1 ]; then
     exit 1
 fi
 
-problem_name=${file%.*}
-problem_name=${problem_name##*/}
 base_url=${problem_name%_*}
 
 echo $problem_name
 echo $base_url
+echo $file
 
 # make test 
 oj dl https://atcoder.jp/contests/${base_url}/tasks/${problem_name//-/_}
 
-oj test -c "python3 $file"
+oj test -c "python3 $path"
 
 
 # rm -rf test/${problem_name}

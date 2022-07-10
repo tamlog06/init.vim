@@ -1,3 +1,4 @@
+#!/bin/zsh
 # zsh problems.sh ABC 240
 
 dir=problems/$1/$2
@@ -36,7 +37,13 @@ mkdir ${dir}
 
 for i in ${fileary[@]}
 do
+problem_name=${(L)1}$2_$i
+file_name=${problem_name}.py
+base_url=${problem_name%_*}
+echo $problem_name
+
 mkdir ${dir}/${i}
-touch ${dir}/${i}/${KIND}_$i.py
-cp ~/Documents/Atcoder-Beginner-Contest/tips/sample.py ${dir}/${i}/
+cd ${dir}/${i}
+oj-template -t main.py -f $file_name https://atcoder.jp/contests/${base_url}/tasks/${problem_name//-/_}
+cd ../../../..
 done
