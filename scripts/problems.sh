@@ -8,10 +8,11 @@ if [ $1 = ABC ]; then
         fileary=(a b c d)
     elif [ $2 -le 211 ]; then
         fileary=(a b c d e f)
-    elif [ $2 -le 232 ]; then
-        fileary=(a b c d e f g h)
+    #elif [ $2 -le 232 ]; then
     else
-        fileary=(a b c d e f g ex)
+    fileary=(a b c d e f g h)
+    #else
+        #fileary=(a b c d e f g ex)
     fi
 elif [ $1 = ARC ]; then
     KIND=arc$2
@@ -33,7 +34,12 @@ else
     exit 1
 fi
 
-mkdir ${dir}
+if [ -d $dir ]; then
+    echo "Error: $dir already exists"
+    exit 1
+else
+    mkdir $dir
+fi
 
 for i in ${fileary[@]}
 do
@@ -45,5 +51,6 @@ echo $problem_name
 mkdir ${dir}/${i}
 cd ${dir}/${i}
 oj-template -t main.py -f $file_name https://atcoder.jp/contests/${base_url}/tasks/${problem_name//-/_}
+oj-template -t generate.py https://atcoder.jp/contests/${base_url}/tasks/${problem_name//-/_}
 cd ../../../..
 done

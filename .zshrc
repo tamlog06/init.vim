@@ -64,6 +64,6 @@ alias ide='~/.scripts/ide.sh'
 alias cptest='~/.scripts/cptest.sh'
 
 # alias problems
-alias mkproblems='~/.scripts/problems.sh'
-export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'
-
+#alias mkproblems='~/.scripts/problems.sh'
+#export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'
+alias gen='oj generate-input -t 2 "python3 generate.py" 10'
