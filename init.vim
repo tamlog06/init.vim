@@ -20,6 +20,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'p00f/nvim-ts-rainbow'
 
 " Functionalities
 Plug 'tpope/vim-fugitive'
