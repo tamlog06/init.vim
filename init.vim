@@ -181,8 +181,12 @@ autocmd BufLeave term://* stopinsert
 lua << EOF
 servers = {
     'pyright',
-    --'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
+    'tsserver', -- uncomment for typescript. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md for other language servers
+    'html',
+    'cssls',
+
 }
+
 require('treesitter-config')
 require('nvim-cmp-config')
 require('lspconfig-config')
