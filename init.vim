@@ -26,7 +26,7 @@ Plug 'p00f/nvim-ts-rainbow'
 
 " Functionalities
 function! UpdateRemotePlugins(...)
-  " Needed to refresh runtime files
+  "" Needed to refresh runtime files
   let &rtp=&rtp
   UpdateRemotePlugins
 endfunction
@@ -35,7 +35,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'mhinz/vim-signify'
-Plug 'jiangmiao/auto-pairs'
+"Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-abolish'
 Plug 'junegunn/vim-easy-align'
