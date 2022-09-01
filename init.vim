@@ -6,6 +6,7 @@ call plug#begin()
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'nvim-treesitter/playground'
+Plug 'airblade/vim-gitgutter'   " git
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -21,6 +22,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
+Plug 'p00f/nvim-ts-rainbow'
 
 " Functionalities
 function! UpdateRemotePlugins(...)
@@ -48,6 +50,11 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
+
+""" Mouse settings
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 " Functionalities - git
 Plug 'tpope/vim-fugitive'
@@ -136,6 +143,10 @@ augroup DraculaTreesitterSourcingFix
     autocmd ColorScheme dracula runtime after/plugin/dracula.vim
     syntax on
 augroup end
+
+"git-gutter
+set signcolumn=yes                   " Always show sign column
+set updatetime=100                    " By default updatetime is 4000ms
 
 " nvim-cmp
 set completeopt=menu,menuone,noselect
