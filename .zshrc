@@ -67,3 +67,13 @@ alias cptest='~/.scripts/cptest.sh'
 #alias mkproblems='~/.scripts/problems.sh'
 #export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'
 alias gen='oj generate-input -t 2 "python3 generate.py" 10'
+
+# environment variebles for slack
+export SLACK_BOT_TOKEN=xoxb-3970867394247-4009551040960-Cx6Mj70HqNPqugRxksFsnLdg
+export SLACK_SIGNING_SECRET=f95092a1f2ff8d733b4d72702304e2cd
+
+# alias for qlmanage
+alias ql='qlmanage -p "$@" >& /dev/null'
+
+# Path for tex
+export PATH=/usr/local/texlive/2022/bin/universal-darwin/:$PATH
