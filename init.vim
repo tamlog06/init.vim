@@ -94,7 +94,7 @@ set encoding=utf-8                       "utf-8
 set hidden                               "keep buffer
 set number                               "display line number
 set title                                "display title
-set clipboard=unnamed                    "copy to clipboard
+set clipboard+=unnamedplus                   "copy to clipboard
 set confirm
 
 """ Filetype-Specific Configurations
@@ -263,3 +263,16 @@ map <A-l> <C-w>l
 
 " emphisize cursor
 nnoremap <leader>a :<C-u>setlocal cursorline! cursorcolumn!<CR>
+
+" change japanese IME to english when moving from insert mode 
+if has('unix')
+  autocmd InsertLeave * :call OffIME()
+endif
+function! OffIME() abort
+  " fcitx-remote returns 1 if current method is mozc
+  let l:fcitx_status = system('fcitx-remote')
+  if fcitx_status == 1
+    call system('fcitx-remote -s fcitx-keyboard-us')
+  endif
+endfunction
+
