@@ -22,7 +22,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'p00f/nvim-ts-rainbow'
+Plug 'p00f/nvim-ts-rainbow'                  " emphisize corresponded brackets
 
 " Functionalities
 function! UpdateRemotePlugins(...)
@@ -47,6 +47,8 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+"Plug 'yamatsum/nvim-cursorline'
+"Plug 'delphinus/auto-cursorline.nvim'
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
@@ -93,9 +95,11 @@ set nowrap                               "don't wrap
 set encoding=utf-8                       "utf-8
 set hidden                               "keep buffer
 set number                               "display line number
+set relativenumber                       " display relativenumber
 set title                                "display title
-set clipboard+=unnamedplus                   "copy to clipboard
+set clipboard+=unnamedplus               "copy to clipboard
 set confirm
+set scrolloff=999                        " automatically move active column to center
 
 """ Filetype-Specific Configurations
 
@@ -263,6 +267,8 @@ map <A-l> <C-w>l
 
 " emphisize cursor
 nnoremap <leader>a :<C-u>setlocal cursorline! cursorcolumn!<CR>
+"setlocal cursorline! cursorcolumn!
+
 
 " change japanese IME to english when moving from insert mode 
 if has('unix')
