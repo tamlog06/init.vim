@@ -7,6 +7,10 @@ download() {
     brew tap homebrew/cask-fonts
     brew install --cask font-fira-code
 
+    echo "Downloading patched Fira Code..."
+    brew tap homebrew/cask-fonts
+    brew install --cask font-fira-code-nerd-font
+
     echo "Downloading starship..."
     brew install starship
     echo 'eval "$(starship init zsh)"' >> ~/.zshrc
