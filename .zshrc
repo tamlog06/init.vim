@@ -81,5 +81,6 @@ export PATH=/usr/local/texlive/2022/bin/universal-darwin/:$PATH
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+alias icat="kitty +kitten icat"
 # initialize starship, this must be at the end of the file
 eval "$(starship init zsh)"

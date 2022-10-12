@@ -14,6 +14,9 @@ download() {
     echo "Downloading kitty..."
     brew install --cask kitty
     brew install --cask hammerspoon
+    
+    echo "Downloading Kittens..."
+    brew install imagemagick
 }
 
 main(){
