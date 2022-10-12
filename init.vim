@@ -20,9 +20,15 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
-Plug 'p00f/nvim-ts-rainbow'
+Plug 'p00f/nvim-ts-rainbow'              " emphisize corresponded brackets
 
 " Functionalities
+function! UpdateRemotePlugins(...)
+  "" Needed to refresh runtime files
+  let &rtp=&rtp
+  UpdateRemotePlugins
+endfunction
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -82,9 +88,11 @@ set nowrap                               "don't wrap
 set encoding=utf-8                       "utf-8
 set hidden                               "keep buffer
 set number                               "display line number
+set relativenumber                       " display relativenumber
 set title                                "display title
 set clipboard=unnamed                    "copy to clipboard
 set confirm
+set scrolloff=999                        " automatically move active column to center
 
 """ Mouse settings
 set mouse=a                               "use mouse
