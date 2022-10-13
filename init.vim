@@ -47,6 +47,7 @@ Plug 'KabbAmine/vCoolor.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'wellle/context.vim'
 Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'github/copilot.vim'
 "Plug 'yamatsum/nvim-cursorline'
 "Plug 'delphinus/auto-cursorline.nvim'
 
@@ -247,6 +248,9 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fc <cmd>Telescope colorscheme<cr>
 nnoremap <leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+" copilotimap
+imap <silent><script><expr> <leader><Tab> copilot#Accept("")
 
 " delete highlight 
 nnoremap <ESC><ESC> :nohlsearch<CR>
