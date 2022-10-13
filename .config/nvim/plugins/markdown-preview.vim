@@ -1,0 +1,1 @@
+UsePlugin 'markdown-preview.nvim'

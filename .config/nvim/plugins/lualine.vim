@@ -1,0 +1,1 @@
+UsePlugin 'lualine.nvim'
