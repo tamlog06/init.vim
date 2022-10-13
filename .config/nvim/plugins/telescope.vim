@@ -1,4 +1,5 @@
 UsePlugin 'telescope.nvim'
+" This plugin is a highly extended fuzzy finder over lists.
 
 " Telescope mappings
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true <cr>

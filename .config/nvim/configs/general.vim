@@ -39,3 +39,10 @@ command! -nargs=* T split | wincmd j | resize 5 | terminal <args>
 " open terminal with insert mode
 autocmd TermOpen * startinsert
 
+" Trim Whitespaces
+function! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\\\@<!\s\+$//e
+    call winrestview(l:save)
+endfunction
+
