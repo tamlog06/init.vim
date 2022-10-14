@@ -1,14 +1,14 @@
 add_newline=false
 
 [character]
-error_symbol = "[❯](bold red)"
-success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold #ff5555)"
+success_symbol = "[❯](bold #50fa7b)"
 
 [directory]
 truncation_length = 100
 truncate_to_repo = false
 truncation_symbol = "…/"
-
+style = "bold #50fa7b"
 
 [docker_context]
 format = "via [🐋 $context](blue bold)"
@@ -23,3 +23,22 @@ symbol = "[](bold yellow)"
 [python]
 symbol = "[ ](bold #64648c)"
 style = "bold #64648c"
+
+[aws]
+style = "bold #ffb86c"
+
+[cmd_duration]
+style = "bold #f1fa8c"
+
+[git_branch]
+style = "bold #ff79c6"
+
+[git_status]
+style = "bold #ff5555"
+
+[hostname]
+style = "bold #bd93f9"
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #8be9fd"

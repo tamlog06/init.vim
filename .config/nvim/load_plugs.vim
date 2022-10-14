@@ -1,6 +1,7 @@
 """ Vim-Plug
 call plug#begin()
-" Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
+""" Core
+
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " syntax highlighting
 Plug 'nvim-treesitter/playground'                             " syntax highlighting
 "Plug 'airblade/vim-gitgutter'                                 " git
@@ -12,7 +13,7 @@ Plug 'kyazdani42/nvim-web-devicons'                           " icons
 Plug 'kyazdani42/nvim-tree.lua'                               " file explorer
 Plug 'p00f/nvim-ts-rainbow'                                   " emphisize corresponded brackets
 
-" lsp
+""" lsp
 Plug 'neovim/nvim-lspconfig'                                  " lsp settings
 Plug 'hrsh7th/cmp-nvim-lsp'                                   " lsp completion
 Plug 'hrsh7th/nvim-cmp'                                       " lsp completion
@@ -23,12 +24,13 @@ Plug 'hrsh7th/cmp-vsnip'                                      " lsp vsnip comple
 Plug 'hrsh7th/vim-vsnip'                                      " lsp vsnip completion
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'                    " lsp signature help
 
-" Functionalities
+"""" Functionalities
 function! UpdateRemotePlugins(...)
   "" Needed to refresh runtime files
   let &rtp=&rtp
   UpdateRemotePlugins
 endfunction
+
 Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }   " fancy completion of wild menu
 "Plug 'tpope/vim-sensible'
 "Plug 'tpope/vim-surround'                                     " change the corresponding brackets
@@ -46,7 +48,11 @@ Plug 'dkarter/bullets.vim'                                     " align indent
 Plug 'wellle/context.vim'                                      " display context
 "Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'easymotion/vim-easymotion'
-Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'                                      " copilot
+Plug 'folke/noice.nvim'                                        " replace UI for messages, cmdline and the popupmenu
+Plug 'MunifTanjim/nui.nvim'                                    " proper rendering and multiple views
+Plug 'rcarriga/nvim-notify'                                    " notificatioon manager
+
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }

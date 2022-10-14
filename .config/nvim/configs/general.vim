@@ -21,6 +21,7 @@ set title                                "display title
 set clipboard=unnamed                    "copy to clipboard
 set confirm
 set scrolloff=999                        " automatically move active column to center
+set termguicolors                        " 24bit color
 
 """ Mouse settings
 set mouse=a                               "use mouse
@@ -46,3 +47,7 @@ function! TrimWhitespace()
     call winrestview(l:save)
 endfunction
 
+if has('persistent_undo')
+    set undodir=~/.config/nvim/undo
+    set undofile
+endif
