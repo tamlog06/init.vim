@@ -53,6 +53,7 @@ Plug 'folke/noice.nvim'                                        " notification ma
 Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
 Plug 'folke/todo-comments.nvim'                                " todo-comments
 Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
+Plug 'goolord/alpha-nvim'                                      " initial screen
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
