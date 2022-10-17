@@ -54,6 +54,7 @@ Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex co
 Plug 'folke/todo-comments.nvim'                                " todo-comments
 Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
 Plug 'goolord/alpha-nvim'                                      " initial screen
+"Plug 'folke/which-key.nvim'                                    " display which-key
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
