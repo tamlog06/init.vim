@@ -46,7 +46,10 @@ Plug 'dkarter/bullets.vim'                                     " align indent
 Plug 'wellle/context.vim'                                      " display context
 "Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'easymotion/vim-easymotion'
-Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'                                      " copilot
+Plug 'MunifTanjim/nui.nvim'                                    " library for lua. required by some plugins
+Plug 'rcarriga/nvim-notify'                                    " notification manager
+Plug 'folke/noice.nvim'                                        " notification manager
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
