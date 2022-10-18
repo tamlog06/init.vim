@@ -49,9 +49,15 @@ Plug 'wellle/context.vim'                                      " display context
 "Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'                                      " copilot
-Plug 'folke/noice.nvim'                                        " replace UI for messages, cmdline and the popupmenu
-Plug 'MunifTanjim/nui.nvim'                                    " proper rendering and multiple views
-Plug 'rcarriga/nvim-notify'                                    " notificatioon manager
+Plug 'MunifTanjim/nui.nvim'                                    " library for lua. required by some plugins
+Plug 'rcarriga/nvim-notify'                                    " notification manager
+Plug 'folke/noice.nvim'                                        " notification manager
+Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
+Plug 'folke/todo-comments.nvim'                                " todo-comments
+Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
+Plug 'goolord/alpha-nvim'                                      " initial screen
+"Plug 'folke/which-key.nvim'                                    " display which-key
+Plug 'skywind3000/asyncrun.vim'                                " async run
 
 
 " Functionalities - Python
