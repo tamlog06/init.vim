@@ -56,6 +56,7 @@ Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
 Plug 'goolord/alpha-nvim'                                      " initial screen
 "Plug 'folke/which-key.nvim'                                    " display which-key
 Plug 'skywind3000/asyncrun.vim'                                " async run
+"Plug 'yoshida-m-3/vim-im-select'                               " change input method
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }

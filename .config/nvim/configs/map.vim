@@ -26,10 +26,10 @@ nmap <leader>$v <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
 
 
 " map option+hjkl to Ctrl hjkl
-map ˙ <C-w>h
-map ∆ <C-w>j
-map ˚ <C-w>k
-map ¬ <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " map option t d to Ctrl t d
 " increase indent
