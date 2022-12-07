@@ -84,3 +84,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 alias icat="kitty +kitten icat"
 # initialize starship, this must be at the end of the file
 eval "$(starship init zsh)"
+
+# alias for ssh in kitty
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
