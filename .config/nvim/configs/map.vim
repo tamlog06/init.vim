@@ -34,10 +34,10 @@ inoremap <Tab> <C-t>
 inoremap <S-Tab> <C-d>         " doesn't work
 
 " map Ctrl-hjkl to Ctrl-w-hjkl
-map <A-h> <C-w>h
-map <A-j> <C-w>j
-map <A-k> <C-w>k
-map <A-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " emphisize cursor
 nnoremap <leader>a :<C-u>setlocal cursorline! cursorcolumn!<CR>
