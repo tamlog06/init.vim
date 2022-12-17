@@ -13,10 +13,12 @@ if [ $1 = ABC ]; then
     fileary=(a b c d e f g h)
     #else
         #fileary=(a b c d e f g ex)
+    base_problem_name=${(L)1}$2
     fi
 elif [ $1 = ARC ]; then
     KIND=arc$2
     fileary=(a b c d e f)
+    base_problem_name=${(L)1}$2
 elif [ $1 = AGC ]; then
     KIND=agc$2
     if [ $2 -le 57 ]; then
@@ -26,9 +28,11 @@ elif [ $1 = AGC ]; then
     else
         fileary=(a b c d e f)
     fi
+    base_problem_name=${(L)1}$2
 elif [ $1 = Other ]; then
     KIND=$2
     fileary=(a b c d e f)
+    base_problem_name=$2
 else
     echo "Error: $1"
     exit 1
@@ -43,7 +47,8 @@ fi
 
 for i in ${fileary[@]}
 do
-problem_name=${(L)1}$2_$i
+#problem_name=${(L)1}$2_$i
+problem_name=${base_problem_name}_$i
 file_name=${problem_name}.py
 base_url=${problem_name%_*}
 echo $problem_name

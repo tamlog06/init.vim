@@ -68,10 +68,6 @@ alias cptest='~/.scripts/cptest.sh'
 #export TEST_DIR='~/Documents/Atcoder-Beginner-Contest/test/'
 alias gen='oj generate-input -t 2 "python3 generate.py" 10'
 
-# environment variebles for slack
-export SLACK_BOT_TOKEN=xoxb-3970867394247-4009551040960-Cx6Mj70HqNPqugRxksFsnLdg
-export SLACK_SIGNING_SECRET=f95092a1f2ff8d733b4d72702304e2cd
-
 # alias for qlmanage
 alias ql='qlmanage -p "$@" >& /dev/null'
 
@@ -87,3 +83,9 @@ eval "$(starship init zsh)"
 
 # alias for ssh in kitty
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
+#python tkinter
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
