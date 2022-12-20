@@ -54,7 +54,7 @@ Plug 'rcarriga/nvim-notify'                                    " notification ma
 Plug 'folke/noice.nvim'                                        " notification manager
 Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
 Plug 'folke/todo-comments.nvim'                                " todo-comments
-Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
+"Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
 Plug 'goolord/alpha-nvim'                                      " initial screen
 "Plug 'folke/which-key.nvim'                                    " display which-key
 Plug 'skywind3000/asyncrun.vim'                                " async run
