@@ -49,7 +49,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'                                      " copilot
 Plug 'MunifTanjim/nui.nvim'                                    " library for lua. required by some plugins
 Plug 'rcarriga/nvim-notify'                                    " notification manager
-Plug 'folke/noice.nvim'                                        " notification manager
+"Plug 'folke/noice.nvim'                                        " notification manager
 Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
 Plug 'folke/todo-comments.nvim'                                " todo-comments
 "Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
