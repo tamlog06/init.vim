@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# general
+alias c='clear'
+
+
 # ls
 eval $(gdircolors ~/dotfiles/.config/zsh/.dircolors)
 alias ls="gls -hFN --color=auto --group-directories-first --hyperlink=auto"
@@ -10,7 +14,8 @@ alias ll="gls -hFN --color=auto --group-directories-first --hyperlink=auto -l"
 alias blender='/Applications/Blender.app/Contents/MacOS/blender'
 
 # newvim
-alias vim='nvim'
+#alias vim='nvim'
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" v="nvim" vimdiff="nvim -d"
 
 # bash scripts
 alias ide='~/.scripts/ide.sh'
