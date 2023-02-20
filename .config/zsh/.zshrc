@@ -1,9 +1,10 @@
 # zsh
-source ~/dotfiles/.config/zsh/general
+source ~/dotfiles/.config/zsh/plugins
 source ~/dotfiles/.config/zsh/completion
 source ~/dotfiles/.config/zsh/aliases
 source ~/dotfiles/.config/zsh/env
 source ~/dotfiles/.config/zsh/specific
+source ~/dotfiles/.config/zsh/general
 
 # load fzf
 source ~/dotfiles/.config/fzf/.fzf.zsh

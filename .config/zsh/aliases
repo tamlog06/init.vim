@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # ls
 eval $(gdircolors ~/dotfiles/.config/zsh/.dircolors)
-alias ls="gls"
-alias la="gls -a"
-alias ll="gls -l"
+alias ls="gls -hFN --color=auto --group-directories-first --hyperlink=auto"
+alias la="gls -hFN --color=auto --group-directories-first --hyperlink=auto -a"
+alias ll="gls -hFN --color=auto --group-directories-first --hyperlink=auto -l"
 
 # Blender
 alias blender='/Applications/Blender.app/Contents/MacOS/blender'
