@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# ls
+eval $(gdircolors ~/dotfiles/.config/zsh/.dircolors)
+alias ls="gls"
+alias la="gls -a"
+alias ll="gls -l"
+
+# Blender
+alias blender='/Applications/Blender.app/Contents/MacOS/blender'
+
+# newvim
+alias vim='nvim'
+
+# bash scripts
+alias ide='~/.scripts/ide.sh'
+alias cptest='~/.scripts/cptest.sh'
+alias gen='oj generate-input 'python3 generate.py''
+
+# kitty
+alias icat="kitty +kitten icat"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

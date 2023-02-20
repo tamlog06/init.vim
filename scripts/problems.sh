@@ -11,10 +11,9 @@ if [ $1 = ABC ]; then
     #elif [ $2 -le 232 ]; then
     else
     fileary=(a b c d e f g h)
-    #else
-        #fileary=(a b c d e f g ex)
-    base_problem_name=${(L)1}$2
+    #fileary=(a b c d e f g ex)
     fi
+    base_problem_name=${(L)1}$2
 elif [ $1 = ARC ]; then
     KIND=arc$2
     fileary=(a b c d e f)
