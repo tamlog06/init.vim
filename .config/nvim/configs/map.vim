@@ -55,4 +55,3 @@ function! OffIME() abort
     call system('fcitx-remote -s fcitx-keyboard-us')
   endif
 endfunction
-

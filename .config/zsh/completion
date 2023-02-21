@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# activate compsys completion system
+autoload -Uz compinit && compinit
+
+# ignore upper/lower case
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Use menu selection for completion
+zstyle ':completion:*' menu select
+#zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+#zmodload zsh/complist
+
+# Include hidden files in autocomplete
+_comp_options+=(globdots)
+
+

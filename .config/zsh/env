@@ -1,0 +1,26 @@
+#!/usr/bin/env zsh
+
+# username
+export PS1="%1~ %# "
+
+# Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Node
+export NVM_DIR="$HOME/.nvm"
+
+# heroku
+export PATH=$PATH:/usr/local/Cellar/heroku/7.56.1/libexec/bin
+
+# tex
+export PATH=/usr/local/texlive/2022/bin/universal-darwin/:$PATH
+
+# pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1   # disable pyenv-virtualenv prompt
+
+# Python tkinter
+export PATH="/opt/homebrew/opt/tcl-tk/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"

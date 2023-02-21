@@ -19,9 +19,8 @@ function! DraculaTweaks()
 endfunction
 
 augroup MyColors
-    autocmd!
-    ""autocmd ColorScheme dracula call DraculaTweaks()
-    "autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
+    "autocmd ColorScheme dracula call DraculaTweaks()
+    autocmd ColorScheme * call TransparentBackground() " uncomment if you are using a translucent terminal and you want nvim to use that
 augroup END
 
 color dracula

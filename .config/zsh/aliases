@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+# general
+alias c='clear'
+
+
+# ls
+eval $(gdircolors ~/dotfiles/.config/zsh/.dircolors)
+alias ls="gls -hFN --color=auto --group-directories-first --hyperlink=auto"
+alias la="gls -hFN --color=auto --group-directories-first --hyperlink=auto -a"
+alias ll="gls -hFN --color=auto --group-directories-first --hyperlink=auto -l"
+
+# Blender
+alias blender='/Applications/Blender.app/Contents/MacOS/blender'
+
+# newvim
+#alias vim='nvim'
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" v="nvim" vimdiff="nvim -d"
+
+# bash scripts
+alias ide='~/.scripts/ide.sh'
+alias cptest='~/.scripts/cptest.sh'
+alias gen='oj generate-input 'python3 generate.py''
+
+# kitty
+alias icat="kitty +kitten icat"
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"

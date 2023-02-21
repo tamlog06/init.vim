@@ -39,7 +39,5 @@ require('lspconfig-config')
 require('telescope-config')
 require('lualine-config')
 require('nvim-tree-config')
-require('notify-config')
 require('diagnostics')
 EOF
-

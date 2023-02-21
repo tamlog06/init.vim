@@ -1,7 +1,6 @@
 """ Vim-Plug
 call plug#begin()
-""" Core
-
+""" Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " syntax highlighting
 Plug 'nvim-treesitter/playground'                             " syntax highlighting
 "Plug 'airblade/vim-gitgutter'                                 " git
@@ -58,7 +57,6 @@ Plug 'folke/todo-comments.nvim'                                " todo-comments
 Plug 'goolord/alpha-nvim'                                      " initial screen
 "Plug 'folke/which-key.nvim'                                    " display which-key
 Plug 'skywind3000/asyncrun.vim'                                " async run
-
 
 " Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }

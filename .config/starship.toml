@@ -18,7 +18,7 @@ threshold = 20
 style = "bold blue"
 
 [lua]
-symbol = "[](bold yellow)"
+symbol = "[ ](bold yellow)"
 
 [python]
 symbol = "[ ](bold #64648c)"
