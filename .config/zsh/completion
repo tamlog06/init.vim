@@ -13,5 +13,3 @@ zstyle ':completion:*' menu select
 
 # Include hidden files in autocomplete
 _comp_options+=(globdots)
-
-

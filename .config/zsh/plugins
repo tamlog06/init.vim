@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Using Zim as the plugin manager
-zstyle ':zim:zmodule' use 'degit'
+#zstyle ':zim:zmodule' use 'degit'
 ZIM_HOME=~/.zim
 
 # Download zimfw plugin manager if missing.

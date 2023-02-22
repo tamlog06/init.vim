@@ -9,8 +9,5 @@ HISTFILE=~/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 
-# ssh forwarding
-ssh-add ~/.ssh/github
-
 # cd + ls
 function chpwd() { ls }
