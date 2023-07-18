@@ -12,7 +12,7 @@ set ruler                                " display cursor position
 set laststatus=2                         " always display status line
 set showmode                             " display current mode
 set list                                 " display blank text
-set nowrap                               " don't wrap
+"set nowrap                               " don't wrap
 set encoding=utf-8                       " utf-8
 set hidden                               " keep buffer
 set number                               " display line number

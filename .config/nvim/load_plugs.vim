@@ -1,9 +1,10 @@
 """ Vim-Plug
 call plug#begin()
+
 " Core (treesitter, nvim-lspconfig, nvim-cmp, nvim-telescope, nvim-lualine)
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' } " syntax highlighting
 Plug 'nvim-treesitter/playground'                             " syntax highlighting
-"Plug 'airblade/vim-gitgutter'                                 " git
+Plug 'airblade/vim-gitgutter'                                 " git
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'                          "fuzzy finder
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } "fuzzy finder
@@ -12,7 +13,7 @@ Plug 'kyazdani42/nvim-web-devicons'                           " icons
 Plug 'kyazdani42/nvim-tree.lua'                               " file explorer
 Plug 'p00f/nvim-ts-rainbow'                                   " emphisize corresponded brackets
 
-" lsp
+"" lsp
 Plug 'neovim/nvim-lspconfig'                                  " lsp settings
 Plug 'hrsh7th/cmp-nvim-lsp'                                   " lsp completion
 Plug 'hrsh7th/nvim-cmp'                                       " lsp completion
@@ -23,9 +24,9 @@ Plug 'hrsh7th/cmp-vsnip'                                      " lsp vsnip comple
 Plug 'hrsh7th/vim-vsnip'                                      " lsp vsnip completion
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'                    " lsp signature help
 
-" Functionalities
+"" Functionalities
 function! UpdateRemotePlugins(...)
-  "" Needed to refresh runtime files
+ """ Needed to refresh runtime files
   let &rtp=&rtp
   UpdateRemotePlugins
 endfunction
@@ -53,28 +54,34 @@ Plug 'folke/noice.nvim'                                        " notification ma
 Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
 Plug 'folke/todo-comments.nvim'                                " todo-comments
 "Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
-Plug 'goolord/alpha-nvim'                                      " initial screen
+"Plug 'goolord/alpha-nvim'                                      " initial screen
+Plug 'startup-nvim/startup.nvim'                               " initial screen
 "Plug 'folke/which-key.nvim'                                    " display which-key
 Plug 'skywind3000/asyncrun.vim'                                " async run
 "Plug 'yoshida-m-3/vim-im-select'                               " change input method
 Plug 'delphinus/skkeleton_indicator.nvim'                      " japanese 
 
-" Functionalities - Python
+"" Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
+Plug 'luk400/vim-jukit'
 
-" Functionalities - git
+"" Functionalities - git
 Plug 'tpope/vim-fugitive'
 
-" Functionalities - Markdown
+"" Functionalities - Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
-" Aesthetics - Colorschemes
+"" Functionalities - LaTeX
+Plug 'lervag/vimtex'
+Plug 'thinca/vim-quickrun'
+
+"" Aesthetics - Colorschemes
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'zaki/zazen'
 Plug 'yuttie/hydrangea-vim'
 
-" Aesthetics - Others
+"" Aesthetics - Others
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-journal'

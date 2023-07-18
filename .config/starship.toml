@@ -1,7 +1,7 @@
 add_newline=false
 
 [character]
-error_symbol = "[❯](bold  #50fa7b)"
+error_symbol = "[❯](bold  #ff5555)"
 success_symbol = "[❯](bold #50fa7b)"
 
 [directory]

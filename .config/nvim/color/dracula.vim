@@ -5,6 +5,7 @@ function! TransparentBackground()
     set fillchars+=vert:\│
     highlight WinSeparator gui=NONE guibg=NONE guifg=#444444 cterm=NONE ctermbg=NONE ctermfg=gray
     highlight VertSplit gui=NONE guibg=NONE guifg=#444444 cterm=NONE ctermbg=NONE ctermfg=gray
+    highlight comment guibg=#282a36
 endfunction
 
 " Use these colors for Pmenu, CmpPmenusBorder and TelescopeBorder when using dracula colorscheme
@@ -16,6 +17,7 @@ function! DraculaTweaks()
     highlight link CmpPmenuBorder NonText
     " Telescope borders
     highlight link TelescopeBorder Constant
+
 endfunction
 
 augroup MyColors
@@ -25,5 +27,3 @@ augroup MyColors
 augroup END
 
 color dracula
-
-

@@ -1,7 +1,7 @@
-source ~/.config/nvim/load_plugs.vim
+ source ~/.config/nvim/load_plugs.vim
 
 " Load General Configurations
-runtime! configs/*.vim
+runtime! configs/*.vim 
 
 " Load Filetype-Specific Configurations
 runtime! specific/*.vim

@@ -7,7 +7,7 @@ source ~/dotfiles/.config/zsh/specific
 source ~/dotfiles/.config/zsh/general
 
 # load fzf
-source ~/dotfiles/.config/fzf/.fzf.zsh
+source ~/dotfiles/.config/fzf/fzf.zsh
 
 # initialize starship, this must be at the end of the file
 eval "$(starship init zsh)"

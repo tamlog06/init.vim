@@ -24,4 +24,5 @@ alias gen='oj generate-input 'python3 generate.py''
 
 # kitty
 alias icat="kitty +kitten icat"
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = "xterm-kitty" ] && alias s="kitty +kitten ssh"
+#alias ssh="kitty +kitten ssh"
