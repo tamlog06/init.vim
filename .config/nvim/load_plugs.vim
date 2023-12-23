@@ -12,6 +12,7 @@ Plug 'nvim-lualine/lualine.nvim'                              " statusline below
 Plug 'kyazdani42/nvim-web-devicons'                           " icons
 Plug 'kyazdani42/nvim-tree.lua'                               " file explorer
 Plug 'p00f/nvim-ts-rainbow'                                   " emphisize corresponded brackets
+Plug 'windwp/nvim-ts-autotag'                                 " auto close tags
 
 "" lsp
 Plug 'neovim/nvim-lspconfig'                                  " lsp settings
@@ -30,6 +31,7 @@ function! UpdateRemotePlugins(...)
   let &rtp=&rtp
   UpdateRemotePlugins
 endfunction
+
 Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }   " fancy completion of wild menu
 "Plug 'tpope/vim-sensible'
 "Plug 'tpope/vim-surround'                                     " change the corresponding brackets
@@ -64,7 +66,7 @@ Plug 'delphinus/skkeleton_indicator.nvim'                      " japanese
 "" Functionalities - Python
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'heavenshell/vim-pydocstring'
-Plug 'luk400/vim-jukit'
+" Plug 'luk400/vim-jukit'                                      " jupyter kernel
 
 "" Functionalities - git
 Plug 'tpope/vim-fugitive'
