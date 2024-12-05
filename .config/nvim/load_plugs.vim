@@ -50,7 +50,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'github/copilot.vim'                                      " copilot
 Plug 'MunifTanjim/nui.nvim'                                    " library for lua. required by some plugins
 Plug 'rcarriga/nvim-notify'                                    " notification manager
-Plug 'folke/noice.nvim'                                        " notification manager
+" Plug 'folke/noice.nvim'                                        " notification manager
 Plug 'norcalli/nvim-colorizer.lua'                             " colorize hex code
 Plug 'folke/todo-comments.nvim'                                " todo-comments
 "Plug 'sidebar-nvim/sidebar.nvim'                               " sidebar
@@ -59,8 +59,9 @@ Plug 'goolord/alpha-nvim'                                      " initial screen
 Plug 'skywind3000/asyncrun.vim'                                " async run
 
 " Functionalities - Python
-Plug 'psf/black', { 'branch': 'stable' }
-Plug 'heavenshell/vim-pydocstring'
+"Plug 'psf/black', { 'branch': 'stable' }
+Plug 'averms/black-nvim', {'do': ':UpdateRemotePlugins'}
+"Plug 'heavenshell/vim-pydocstring'
 
 " Functionalities - git
 Plug 'tpope/vim-fugitive'

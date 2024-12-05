@@ -12,3 +12,5 @@ source ~/dotfiles/.config/zsh/general
 # initialize starship, this must be at the end of the file
 eval "$(starship init zsh)"
 
+
+export PYTHONPATH=$PYTHONPATH:/research/tamura_research/stamura/nkmr-lab/intent_prediction_project

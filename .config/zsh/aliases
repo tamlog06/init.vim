@@ -13,12 +13,14 @@ alias ll="ls -hFN --color=auto --group-directories-first --hyperlink=auto -l"
 
 # newvim
 #alias vim='nvim'
-command -v nvim >/dev/null && alias vim="nvim" vi="nvim" v="nvim" vimdiff="nvim -d"
+# command -v nvim >/dev/null && alias vim="nvim" vi="nvim" v="nvim" vimdiff="nvim -d"
+#alias vim='~/nvim.appimage'
+alias vim='/snap/bin/nvim'
+
 
 # kitty
 alias icat="kitty +kitten icat"
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 
-# cuda
-export PATH="/usr/local/cuda/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+# pbcopy
+alias pbcopy='xsel --clipboard --input'
